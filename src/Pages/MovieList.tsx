@@ -1,5 +1,7 @@
+import FetchMovies from '../Components/FetchMovies.tsx';
+
 const MovieList = () => {
-  return <div>Movie List</div>;
+  return <FetchMovies />;
 };
 
 export default MovieList;
