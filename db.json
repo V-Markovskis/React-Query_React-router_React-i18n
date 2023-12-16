@@ -1,0 +1,53 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Inception",
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan",
+      "release_year": 2010,
+      "rating": 8.8
+    },
+    {
+      "id": 2,
+      "title": "The Shawshank Redemption",
+      "genre": "Drama",
+      "director": "Frank Darabont",
+      "release_year": 1994,
+      "rating": 9.3
+    },
+    {
+      "id": 3,
+      "title": "The Godfather",
+      "genre": "Crime",
+      "director": "Francis Ford Coppola",
+      "release_year": 1972,
+      "rating": 9.2
+    },
+    {
+      "id": 4,
+      "title": "Pulp Fiction",
+      "genre": "Crime",
+      "director": "Quentin Tarantino",
+      "release_year": 1994,
+      "rating": 8.9
+    },
+    {
+      "id": 5,
+      "title": "Schindler's List",
+      "genre": "Biography",
+      "director": "Steven Spielberg",
+      "release_year": 1993,
+      "rating": 8.9
+    },
+    {
+      "id": 6,
+      "title": "The Dark Knight",
+      "genre": "Action",
+      "director": "Christopher Nolan",
+      "release_year": 2008,
+      "rating": 9.0
+    }
+  ]
+
+}

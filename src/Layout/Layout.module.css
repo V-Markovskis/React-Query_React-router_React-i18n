@@ -1,0 +1,16 @@
+
+.navigationContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.navigationItem {
+    color: white;
+    text-decoration: none;
+
+    &.active {
+        color: #8080ea;
+        font-weight: bold;
+    }
+}
