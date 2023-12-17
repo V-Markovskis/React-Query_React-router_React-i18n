@@ -1,14 +1,12 @@
 import { useParams } from 'react-router-dom';
 import useGetMovie from './SingleMovieHooks/useGetMovie.tsx';
 import style from './SingleMovie.module.css';
-import { useState } from 'react';
-import MovieComments from '../MovieComments/MovieComments.tsx';
+import DisplaySingleMovieComments from './DisplaySingleMovieComments/DisplaySingleMovieComments.tsx';
 
 const SingleMovie = () => {
   const { id } = useParams();
   const { data, isLoading } = useGetMovie(id!);
-  const [comment, setComment] = useState<string>('');
-  const [allComments, setAllComments] = useState<string[]>([]);
+  // const { commentsData } = useGetSingleMovieComments(id!);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -37,28 +35,8 @@ const SingleMovie = () => {
         <label htmlFor="comments">Comments:</label>
         <br />
         <br />
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            console.log('Submit comment clicked');
-
-            setAllComments([...allComments, comment]);
-          }}
-        >
-          <input
-            type="text"
-            id="comments"
-            placeholder="Your comment..."
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          />
-          <br />
-          <br />
-          <button className="btn btn-success">Submit</button>
-        </form>
       </div>
-      {allComments &&
-        allComments.map((comment: string, key: number) => <MovieComments key={key} comment={comment}></MovieComments>)}
+      <DisplaySingleMovieComments id={id!}></DisplaySingleMovieComments>
     </>
   );
 };

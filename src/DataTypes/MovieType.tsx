@@ -9,4 +9,10 @@ const validateMovieData = z.object({
   rating: z.number(),
 });
 
+const validateMovieComments = z.object({
+  id: z.number(),
+  commentsArray: z.string().array(),
+});
+
 export type MovieType = z.infer<typeof validateMovieData>;
+export type SingleMovieCommentType = z.infer<typeof validateMovieComments>;

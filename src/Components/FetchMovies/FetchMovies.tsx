@@ -1,6 +1,6 @@
-import useGetMovies from '../../Hooks/useGetMovies.tsx';
+import useGetMovies from '../../GlobalHooks/useGetMovies.tsx';
 import DisplayAllMovies from '../DisplayAllMovies/DisplayAllMovies.tsx';
-import useDeleteMovie from '../../Hooks/useDeleteMovie.tsx';
+import useDeleteMovie from '../../GlobalHooks/useDeleteMovie.tsx';
 
 const FetchMovies = () => {
   const { data, isLoading, isError, error } = useGetMovies();
