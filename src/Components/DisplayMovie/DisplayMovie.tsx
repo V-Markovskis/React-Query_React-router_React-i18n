@@ -1,5 +1,6 @@
 import { MovieType } from '../../DataTypes/MovieType.tsx';
 import style from './DisplayMovie.module.css';
+import { NavLink } from 'react-router-dom';
 
 type DisplayMovieProps = {
   movieToDisplay: MovieType;
@@ -11,7 +12,7 @@ const DisplayMovie = ({ movieToDisplay, deleteMovie }: DisplayMovieProps) => {
     <>
       <div className={style.movieEntity}>
         <h3>Movie details</h3>
-        <span>Title: {movieToDisplay.title}</span>
+        <NavLink to={`/movie-list/${movieToDisplay.id}`}>Title: {movieToDisplay.title}</NavLink>
         <br />
         <span>Genre: {movieToDisplay.genre}</span>
         <br />

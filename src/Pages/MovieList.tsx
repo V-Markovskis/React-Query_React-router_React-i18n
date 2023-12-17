@@ -1,4 +1,4 @@
-import FetchMovies from '../Components/FetchMovies.tsx';
+import FetchMovies from '../Components/FetchMovies/FetchMovies.tsx';
 
 const MovieList = () => {
   return <FetchMovies />;

@@ -1,34 +1,37 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import style from './Layout.module.css';
+
+const navItems = [
+  {
+    label: 'About Project',
+    path: '/',
+  },
+  {
+    label: 'Movie list',
+    path: '/movie-list',
+  },
+  {
+    label: 'About Author',
+    path: '/about-author',
+  },
+];
+
 const Layout = () => {
   return (
     <>
       <div>
         <nav className={style.navigationContainer}>
-          <NavLink
-            to="/"
-            className={({ isActive }) => {
-              return `${style.navigationItem} ${isActive ? style.active : ''}`;
-            }}
-          >
-            About Project
-          </NavLink>
-          <NavLink
-            to="/movie-list"
-            className={({ isActive }) => {
-              return `${style.navigationItem} ${isActive ? style.active : ''}`;
-            }}
-          >
-            Movie list
-          </NavLink>
-          <NavLink
-            to="/about-author"
-            className={({ isActive }) => {
-              return `${style.navigationItem} ${isActive ? style.active : ''}`;
-            }}
-          >
-            About Project
-          </NavLink>
+          {navItems.map(({ path, label }) => (
+            <NavLink
+              key={path}
+              to={path}
+              className={({ isActive }) => {
+                return `${style.navigationItem} ${isActive ? style.active : ''}`;
+              }}
+            >
+              {label}
+            </NavLink>
+          ))}
         </nav>
 
         {/* An <Outlet> renders whatever child route is currently active,
