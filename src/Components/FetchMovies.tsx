@@ -1,12 +1,11 @@
-import { QueryClient } from 'react-query';
-import useGetMovies from '../Hooks/useGetMovies.ts';
-import DisplayAllMovies from './DisplayAllMovies.tsx';
+import useGetMovies from '../Hooks/useGetMovies.tsx';
+import DisplayAllMovies from './DisplayAllMovies/DisplayAllMovies.tsx';
+import useDeleteMovie from '../Hooks/useDeleteMovie.tsx';
 
 const FetchMovies = () => {
-  const queryClient = new QueryClient();
-  // const [movies, setMovies] = useState<MovieType[]>([]);
-
   const { data, isLoading, isError, error } = useGetMovies();
+
+  const deleteMutation = useDeleteMovie();
 
   if (isError) {
     if (error instanceof Error) {
@@ -20,7 +19,20 @@ const FetchMovies = () => {
     return <span>No data found</span>;
   }
 
-  return <>{isLoading ? <span>Loading...</span> : <DisplayAllMovies movies={data} />}</>;
+  return (
+    <>
+      {isLoading ? (
+        <span>Loading...</span>
+      ) : (
+        <DisplayAllMovies
+          movies={data}
+          deleteMovie={(id) => {
+            deleteMutation.mutate(id);
+          }}
+        />
+      )}
+    </>
+  );
 };
 
 export default FetchMovies;
