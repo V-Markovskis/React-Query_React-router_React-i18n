@@ -1,18 +1,19 @@
 import MovieComments from '../../MovieComments/MovieComments.tsx';
 import useGetSingleMovieComments from '../SingleMovieHooks/useGetSingleMovieComments.tsx';
 import style from './DisplaySingleMovieComments.module.css';
+import usePostSingleMovieComments from '../SingleMovieHooks/usePostSingleMovieComments.tsx';
+import { useState } from 'react';
 
 type SingleMovieCommentsProps = {
   id: string;
 };
 
 const DisplaySingleMovieComments = ({ id }: SingleMovieCommentsProps) => {
-  // const [comment, setComment] = useState<string>('');
-  // const [allComments, setAllComments] = useState<string[]>([]);
+  const [comment, setComment] = useState<string>('');
 
   const { data, isLoading } = useGetSingleMovieComments(id!);
 
-  console.log('data, sing movie comments', data);
+  const singleMovieCommentsMutation = usePostSingleMovieComments(id!, data);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -28,14 +29,19 @@ const DisplaySingleMovieComments = ({ id }: SingleMovieCommentsProps) => {
         onSubmit={(e) => {
           e.preventDefault();
           console.log('Submit button clicked');
+          singleMovieCommentsMutation.mutate(comment);
+          setComment('');
         }}
       >
+        <label htmlFor="comments">Comments:</label>
+        <br />
+        <br />
         <input
           type="text"
           id="comments"
           placeholder="Your comment..."
-          // value={comment}
-          // onChange={(e) => setComment(e.target.value)}
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
         />
         <br />
         <br />

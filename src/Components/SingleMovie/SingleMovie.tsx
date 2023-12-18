@@ -32,9 +32,6 @@ const SingleMovie = () => {
         <br />
         <br />
         <br />
-        <label htmlFor="comments">Comments:</label>
-        <br />
-        <br />
       </div>
       <DisplaySingleMovieComments id={id!}></DisplaySingleMovieComments>
     </>
