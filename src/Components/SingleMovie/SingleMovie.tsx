@@ -30,8 +30,6 @@ const SingleMovie = () => {
         <br />
         <span>Rating: {data.rating}</span>
         <br />
-        <br />
-        <br />
       </div>
       <DisplaySingleMovieComments id={id!}></DisplaySingleMovieComments>
     </>

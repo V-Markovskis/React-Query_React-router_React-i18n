@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from '../Layout/Layout.tsx';
-import AboutProject from '../Pages/AboutProject.tsx';
-import MovieList from '../Pages/MovieList.tsx';
-import AboutAuthor from '../Pages/AboutAuthor.tsx';
-import NoMatch from '../Pages/NoMatch.tsx';
+import AboutProject from '../Pages/AboutProjectPage/AboutProject.tsx';
+import MovieList from '../Pages/MovieListPage/MovieList.tsx';
+import AboutAuthor from '../Pages/AboutAuthorPage/AboutAuthor.tsx';
+import NoMatch from '../Pages/NoMatchPage/NoMatch.tsx';
 import SingleMovie from '../Components/SingleMovie/SingleMovie.tsx';
 
 function Router() {
