@@ -4,6 +4,9 @@ import App from './App.tsx';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
+// import i18n (needs to be bundled ;))
+import './LanguageTranslator/i18n.tsx';
+
 //https://tanstack.com/query/latest/docs/react/reference/QueryClient#queryclientgetdefaultoptions
 const queryClient = new QueryClient({
   defaultOptions: {

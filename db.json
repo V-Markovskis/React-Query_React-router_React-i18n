@@ -174,7 +174,8 @@
         "Comment 5-1",
         "Comment 5-2",
         "Comment 5-3",
-        "Same story for me..."
+        "Same story for me...",
+        "one more story"
       ],
       "id": 5
     },
@@ -187,12 +188,13 @@
       ]
     },
     {
-      "id": 7,
       "commentsArray": [
         "Comment 7-1",
         "Comment 7-2",
-        "Comment 7-3"
-      ]
+        "Comment 7-3",
+        "random text"
+      ],
+      "id": 7
     },
     {
       "id": 8,
